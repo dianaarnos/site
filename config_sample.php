@@ -28,4 +28,11 @@ return [
         'LinkedIn' => envconfig('LINK_LINKEDIN', 'https://www.linkedin.com/in/dianaarnos/'),
         'Twitch' => envconfig('LINK_TWITCH'),
     ],
+
+    // config/minicli.php
+    'stencil_locations' => [
+        'post' => __DIR__ . '/../content/posts',
+        'page' => __DIR__ . '/../content/pages',
+        'palestra' => __DIR__ . '/../content/palestras',
+    ],
 ];
