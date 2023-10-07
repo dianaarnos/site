@@ -22,8 +22,9 @@ return [
     'cache_path' => __DIR__ . '/../var/cache',
     'stencil_dir' => __DIR__ . '/../app/Resources/stencil',
     'stencil_locations' => [
-        'posts' => __DIR__ . '/../content/posts',
-        'pages' => __DIR__ . '/../content/pages',
+        'post' => __DIR__ . '/../content/posts',
+        'page' => __DIR__ . '/../content/pages',
+        'palestra' => __DIR__ . '/../content/palestras',
     ],
     'rss_feed' => php_sapi_name() !== 'cli' ? 'feed' : 'feed.rss',
 ];
