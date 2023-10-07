@@ -1,3 +1,6 @@
 [submodule "content/materiais"]
 	path = content/materiais
 	url = git@github.com-dianaarnos:dianaarnos/materiais.git
+[submodule "content"]
+	path = content
+	url = git@github.com-dianaarnos:dianaarnos/materiais.git
