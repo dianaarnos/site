@@ -1,0 +1,7 @@
+services:
+  php:
+    build: ./docker
+    volumes:
+      - ./:/app
+    ports:
+      - "${APP_PORTA}:8000"
