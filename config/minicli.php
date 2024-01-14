@@ -17,7 +17,7 @@ return [
         '@librarianphp/command-build',
     ],
     'theme' => 'unicorn',
-    'templates_path' => __DIR__ . '/../app/Resources/themes/default',
+    'templates_path' => __DIR__ . '/../app/Resources/themes/sifr',
     'data_path' => __DIR__ . '/../content',
     'cache_path' => __DIR__ . '/../var/cache',
     'stencil_dir' => __DIR__ . '/../app/Resources/stencil',
@@ -27,4 +27,5 @@ return [
         'palestra' => __DIR__ . '/../content/palestras',
     ],
     'rss_feed' => php_sapi_name() !== 'cli' ? 'feed' : 'feed.rss',
+    'twig_debug' => true,
 ];

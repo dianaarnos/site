@@ -21,6 +21,8 @@ return [
 
     'posts_per_page' => 10,
 
+    'sugestao_de_tema' => 'https://github.com/dianaarnos/materiais/issues/new?labels=sugestao_de_tema&template=sugestao-de-tema.md',
+
     // Optional: Social links that show up on the top right
     'social_links' => [
         'Twitter' => envconfig('LINK_TWITTER', 'https://twitter.com/dianaarnos'),
@@ -30,14 +32,10 @@ return [
         'Twitch' => envconfig('LINK_TWITCH'),
     ],
 
-    'sugestao_de_tema' => 'https://github.com/dianaarnos/materiais/new?labels=sugestao_de_tema&template=sugestao-de-tema.md',
-
     // config/minicli.php
     'stencil_locations' => [
         'post' => __DIR__ . '/../content/posts',
         'page' => __DIR__ . '/../content/pages',
         'palestra' => __DIR__ . '/../content/palestras',
     ],
-    'templates_path' => __DIR__ . '/../app/Resources/themes/sifr',
-    'theme' => 'unicorn',
 ];

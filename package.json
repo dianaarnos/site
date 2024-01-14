@@ -2,23 +2,19 @@
   "private": true,
   "scripts": {
     "dev": "npm run development",
-    "development": "./node_modules/postcss-cli/bin/postcss app/Resources/css/app.css -o app/Resources/public/css/app.css",
+    "development": "npx tailwindcss -i ./app/Resources/css/app.css -o ./app/Resources/public/css/app.css",
     "watch": "npm run development -- --watch",
     "watch-poll": "npm run watch -- --watch-poll",
     "prod": "npm run production",
-    "production": "./node_modules/postcss-cli/bin/postcss app/Resources/css/app.css -o app/Resources/public/css/app.css"
+    "production": "npx tailwindcss -i ./app/Resources/css/app.css -o ./app/Resources/public/css/app.css"
   },
   "dependencies": {
-    "@tailwindcss/typography": "^0.5",
-    "postcss-import": "^14.0"
+    "flowbite-typography": "^1.0.3",
+    "tailwindcss": "^3.4.0"
   },
   "devDependencies": {
-    "autoprefixer": "^10.4",
-    "postcss": "^8.4",
-    "postcss-cli": "^8.3",
-    "prettier": "^3.1.0",
-    "prettier-plugin-tailwindcss": "^0.5.7",
-    "tailwindcss": "^3.3"
+    "tailwindcss": "^3.3",
+    "flowbite": "^2.2.1"
   },
   "homepage": "https://dianaarnos.site"
 }
