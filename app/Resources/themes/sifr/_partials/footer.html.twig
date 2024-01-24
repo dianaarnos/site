@@ -1,29 +1,29 @@
 <footer class="p-4 bg-white md:p-8 lg:p-10 dark:bg-gray-900">
     <div class="mx-auto max-w-screen-xl text-center">
-        <a href="#" class="flex justify-center items-center text-2xl font-semibold text-gray-900 dark:text-white">
-            Diana Arnos    
+        <a href="/" class="flex justify-center items-center text-2xl font-semibold text-gray-900 dark:text-white">
+            {{ site_title() }}    
         
         </a>
         <p class="my-6 text-gray-500 dark:text-gray-400">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eu iaculis purus, eu consectetur turpis.
+            {{ config('footer_mensagem') }}
         </p>
         
         <ul class="flex flex-wrap justify-center items-center mb-6 text-gray-900 dark:text-white">
             <li>
-                <a href="#" class="mr-4 hover:underline md:mr-6 ">Contribua</a>
+                <a href="/pages/contribua" class="mr-4 hover:underline md:mr-6 ">Contribua</a>
             </li>
             <li>
-                <a href="#" class="mr-4 hover:underline md:mr-6">Sobre</a>
+                <a href="/pages/sobre" class="mr-4 hover:underline md:mr-6">Sobre</a>
             </li>
             <li>
-                <a href="#" class="mr-4 hover:underline md:mr-6 ">Artigos</a>
+                <a href="/posts" class="mr-4 hover:underline md:mr-6 ">Artigos</a>
             </li>
             <li>
-                <a href="#" class="mr-4 hover:underline md:mr-6">Aulas, Palestras e Lives</a>
+                <a href="/palestras" class="mr-4 hover:underline md:mr-6">Aulas, Palestras e Lives</a>
             </li>
         </ul>
 
-        <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">1987-2024 <a href="index.html" class="hover:underline">Diana Ungaro Arnos.</a>
+        <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">1987 - {{ "now"|date("Y") }} <a href="index.html" class="hover:underline">Diana Ungaro Arnos.</a>
             Todo conteúdo deste site é licenciado como:
                 <br>
                 <a class="items-center" href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer">

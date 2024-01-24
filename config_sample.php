@@ -32,6 +32,8 @@ return [
 
     'sugestao_de_tema' => 'https://github.com/dianaarnos/materiais/new?labels=sugestao_de_tema&template=sugestao-de-tema.md',
 
+    'footer_mensagem' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eu iaculis purus, eu consectetur turpis.',
+
     // config/minicli.php
     'stencil_locations' => [
         'post' => __DIR__ . '/../content/posts',

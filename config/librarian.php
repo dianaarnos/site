@@ -23,6 +23,8 @@ return [
 
     'sugestao_de_tema' => 'https://github.com/dianaarnos/materiais/issues/new?labels=sugestao_de_tema&template=sugestao-de-tema.md',
 
+    'footer_mensagem' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eu iaculis purus, eu consectetur turpis.',
+
     // Optional: Social links that show up on the top right
     'social_links' => [
         'Twitter' => envconfig('LINK_TWITTER', 'https://twitter.com/dianaarnos'),
