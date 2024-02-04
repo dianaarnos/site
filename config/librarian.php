@@ -19,7 +19,7 @@ return [
     'site_index' => 'pages/index',
     'site_index_tpl' => 'content/index.html.twig',
 
-    'posts_per_page' => 10,
+    'posts_per_page' => 12,
 
     'sugestao_de_tema' => 'https://github.com/dianaarnos/materiais/issues/new?labels=sugestao_de_tema&template=sugestao-de-tema.md',
 

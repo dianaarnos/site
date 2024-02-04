@@ -19,7 +19,7 @@ return [
     'site_index' => 'pages/index',
     'site_index_tpl' => 'content/index.html.twig',
 
-    'posts_per_page' => 10,
+    'posts_per_page' => 12,
 
     // Optional: Social links that show up on the top right
     'social_links' => [

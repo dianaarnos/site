@@ -31,7 +31,7 @@
                 {% endfor %}
             </div>
         </div>
-        
-        {% include '_partials/pagination.html.twig' %}
+
+        {% include '_partials/pagination.html.twig' with {'total_articles':  content_list|length, 'items_per_page': 12 } %}
     </main>
 {% endblock %}

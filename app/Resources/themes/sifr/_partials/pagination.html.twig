@@ -6,6 +6,8 @@
             </li>
         {% endif %}
 
+        {% set total_pages = total_articles / items_per_page %}
+        {% set total_pages = total_pages > 1 ? total_pages : 1 %}
         {% for i in 1..total_pages %}
             <li>
                 {% if current_page == i %}
