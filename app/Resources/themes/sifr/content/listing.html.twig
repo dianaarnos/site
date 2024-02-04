@@ -6,197 +6,29 @@
             <h2 class="mb-8 text-2xl font-bold text-gray-900 dark:text-white">Artigos Recentes</h2>
 
             <div class="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
-                <article class="max-w-xs">
-                    <a href="#">
-                        <img src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/article/blog-1.png" class="mb-5 rounded-lg" alt="Image 1">
-                    </a>
+                {% for post in content_list %}
+                    <article class="max-w-xs">
+                        {% if post.frontMatterGet('cover_image')%}
+                            <a href="{{ site_url() }}/{{ post.getLink() }}">
+                                <img src="{{ post.frontMatterGet('cover_image')|raw}}" class="mb-5 rounded-lg" alt="Image 1">
+                            </a>
+                        {% else %}
+                            <a href="{{ site_url() }}/{{ post.getLink() }}">
+                                <img src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/article/blog-1.png" class="mb-5 rounded-lg" alt="Image 1">
+                            </a>
+                        {% endif %}
 
-                    <h2 class="mb-2 text-xl font-bold leading-tight text-gray-900 dark:text-white">
-                        <a href="#">Our first office</a>
-                    </h2>
+                        <h2 class="mb-2 text-xl font-bold leading-tight text-gray-900 dark:text-white">
+                            <a href="{{ site_url() }}/{{ post.getLink() }}">{{ post.frontMatterGet('title') ?? post.title }}</a>
+                        </h2>
 
-                    <p class="mb-4 text-gray-500 dark:text-gray-400">Over the past year, Volosoft has undergone many changes! After months of preparation.</p>
-                    
-                    <a href="#" class="inline-flex items-center font-medium text-primary-600 dark:text-primary-500">
-                        Read more
-                    </a>
-                </article>
-
-                <article class="max-w-xs">
-                    <a href="#">
-                        <img src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/article/blog-2.png" class="mb-5 rounded-lg" alt="Image 2">
-                    </a>
-
-                    <h2 class="mb-2 text-xl font-bold leading-tight text-gray-900 dark:text-white">
-                        <a href="#">Enterprise design tips</a>
-                    </h2>
-                    
-                    <p class="mb-4  text-gray-500 dark:text-gray-400">Over the past year, Volosoft has undergone many changes! After months of preparation.</p>
-                    
-                    <a href="#" class="inline-flex items-center font-medium text-primary-600 dark:text-primary-500">
-                        Read more
-                    </a>
-                </article>
-
-                <article class="max-w-xs">
-                    <a href="#">
-                        <img src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/article/blog-3.png" class="mb-5 rounded-lg" alt="Image 3">
-                    </a>
-                    
-                    <h2 class="mb-2 text-xl font-bold leading-tight text-gray-900 dark:text-white">
-                        <a href="#">We partnered with Google</a>
-                    </h2>
-                    
-                    <p class="mb-4  text-gray-500 dark:text-gray-400">Over the past year, Volosoft has undergone many changes! After months of preparation.</p>
-                    
-                    <a href="#" class="inline-flex items-center font-medium text-primary-600 dark:text-primary-500">
-                        Read more
-                    </a>
-                </article>
-
-                <article class="max-w-xs">
-                    <a href="#">
-                        <img src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/article/blog-3.png" class="mb-5 rounded-lg" alt="Image 3">
-                    </a>
-                    
-                    <h2 class="mb-2 text-xl font-bold leading-tight text-gray-900 dark:text-white">
-                        <a href="#">We partnered with Google</a>
-                    </h2>
-                    
-                    <p class="mb-4  text-gray-500 dark:text-gray-400">Over the past year, Volosoft has undergone many changes! After months of preparation.</p>
-                    
-                    <a href="#" class="inline-flex items-center font-medium text-primary-600 dark:text-primary-500">
-                        Read more
-                    </a>
-                </article>
-
-                <article class="max-w-xs">
-                    <a href="#">
-                        <img src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/article/blog-1.png" class="mb-5 rounded-lg" alt="Image 1">
-                    </a>
-
-                    <h2 class="mb-2 text-xl font-bold leading-tight text-gray-900 dark:text-white">
-                        <a href="#">Our first office</a>
-                    </h2>
-
-                    <p class="mb-4 text-gray-500 dark:text-gray-400">Over the past year, Volosoft has undergone many changes! After months of preparation.</p>
-                    
-                    <a href="#" class="inline-flex items-center font-medium text-primary-600 dark:text-primary-500">
-                        Read more
-                    </a>
-                </article>
-
-                <article class="max-w-xs">
-                    <a href="#">
-                        <img src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/article/blog-2.png" class="mb-5 rounded-lg" alt="Image 2">
-                    </a>
-
-                    <h2 class="mb-2 text-xl font-bold leading-tight text-gray-900 dark:text-white">
-                        <a href="#">Enterprise design tips</a>
-                    </h2>
-                    
-                    <p class="mb-4  text-gray-500 dark:text-gray-400">Over the past year, Volosoft has undergone many changes! After months of preparation.</p>
-                    
-                    <a href="#" class="inline-flex items-center font-medium text-primary-600 dark:text-primary-500">
-                        Read more
-                    </a>
-                </article>
-
-                <article class="max-w-xs">
-                    <a href="#">
-                        <img src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/article/blog-3.png" class="mb-5 rounded-lg" alt="Image 3">
-                    </a>
-                    
-                    <h2 class="mb-2 text-xl font-bold leading-tight text-gray-900 dark:text-white">
-                        <a href="#">We partnered with Google</a>
-                    </h2>
-                    
-                    <p class="mb-4  text-gray-500 dark:text-gray-400">Over the past year, Volosoft has undergone many changes! After months of preparation.</p>
-                    
-                    <a href="#" class="inline-flex items-center font-medium text-primary-600 dark:text-primary-500">
-                        Read more
-                    </a>
-                </article>
-
-                <article class="max-w-xs">
-                    <a href="#">
-                        <img src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/article/blog-3.png" class="mb-5 rounded-lg" alt="Image 3">
-                    </a>
-                    
-                    <h2 class="mb-2 text-xl font-bold leading-tight text-gray-900 dark:text-white">
-                        <a href="#">We partnered with Google</a>
-                    </h2>
-                    
-                    <p class="mb-4  text-gray-500 dark:text-gray-400">Over the past year, Volosoft has undergone many changes! After months of preparation.</p>
-                    
-                    <a href="#" class="inline-flex items-center font-medium text-primary-600 dark:text-primary-500">
-                        Read more
-                    </a>
-                </article>
-                
-                <article class="max-w-xs">
-                    <a href="#">
-                        <img src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/article/blog-1.png" class="mb-5 rounded-lg" alt="Image 1">
-                    </a>
-
-                    <h2 class="mb-2 text-xl font-bold leading-tight text-gray-900 dark:text-white">
-                        <a href="#">Our first office</a>
-                    </h2>
-
-                    <p class="mb-4 text-gray-500 dark:text-gray-400">Over the past year, Volosoft has undergone many changes! After months of preparation.</p>
-                    
-                    <a href="#" class="inline-flex items-center font-medium text-primary-600 dark:text-primary-500">
-                        Read more
-                    </a>
-                </article>
-
-                <article class="max-w-xs">
-                    <a href="#">
-                        <img src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/article/blog-2.png" class="mb-5 rounded-lg" alt="Image 2">
-                    </a>
-
-                    <h2 class="mb-2 text-xl font-bold leading-tight text-gray-900 dark:text-white">
-                        <a href="#">Enterprise design tips</a>
-                    </h2>
-                    
-                    <p class="mb-4  text-gray-500 dark:text-gray-400">Over the past year, Volosoft has undergone many changes! After months of preparation.</p>
-                    
-                    <a href="#" class="inline-flex items-center font-medium text-primary-600 dark:text-primary-500">
-                        Read more
-                    </a>
-                </article>
-
-                <article class="max-w-xs">
-                    <a href="#">
-                        <img src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/article/blog-3.png" class="mb-5 rounded-lg" alt="Image 3">
-                    </a>
-                    
-                    <h2 class="mb-2 text-xl font-bold leading-tight text-gray-900 dark:text-white">
-                        <a href="#">We partnered with Google</a>
-                    </h2>
-                    
-                    <p class="mb-4  text-gray-500 dark:text-gray-400">Over the past year, Volosoft has undergone many changes! After months of preparation.</p>
-                    
-                    <a href="#" class="inline-flex items-center font-medium text-primary-600 dark:text-primary-500">
-                        Read more
-                    </a>
-                </article>
-
-                <article class="max-w-xs">
-                    <a href="#">
-                        <img src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/article/blog-3.png" class="mb-5 rounded-lg" alt="Image 3">
-                    </a>
-                    
-                    <h2 class="mb-2 text-xl font-bold leading-tight text-gray-900 dark:text-white">
-                        <a href="#">We partnered with Google</a>
-                    </h2>
-                    
-                    <p class="mb-4  text-gray-500 dark:text-gray-400">Over the past year, Volosoft has undergone many changes! After months of preparation.</p>
-                    
-                    <a href="#" class="inline-flex items-center font-medium text-primary-600 dark:text-primary-500">
-                        Read more
-                    </a>
-                </article>
+                        <p class="mb-4 text-gray-500 dark:text-gray-400">{{ post.frontMatterGet('description') }}</p>
+                        
+                        <a href="{{ site_url() }}/{{ post.getLink() }}" class="inline-flex items-center font-medium text-primary-600 dark:text-primary-500">
+                            Leia mais...
+                        </a>
+                    </article>
+                {% endfor %}
             </div>
         </div>
         
