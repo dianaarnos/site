@@ -10,7 +10,7 @@ return [
 
     // Site Information
     'site_name' => envconfig('SITE_NAME', 'Diana Arnos'),
-    'site_author' => envconfig('SITE_AUTHOR', '@dianaarnos'),
+    'site_author' => envconfig('SITE_AUTHOR', 'Diana Arnos'),
     'site_description' => envconfig('SITE_DESC', 'Um espaço para centralizar as coisas que eu produzir e compartilhar.'),
     'site_url' => envconfig('SITE_URL', 'http://localhost:8001'),
     'site_root' => envconfig('SITE_ROOT', '/'),
@@ -24,6 +24,8 @@ return [
     'sugestao_de_tema' => 'https://github.com/dianaarnos/materiais/issues/new?labels=sugestao_de_tema&template=sugestao-de-tema.md',
 
     'footer_mensagem' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eu iaculis purus, eu consectetur turpis.',
+
+    'foto_perfil' => 'https://avatars.githubusercontent.com/u/6060754?v=4',
 
     // Optional: Social links that show up on the top right
     'social_links' => [

@@ -24,7 +24,8 @@
 {% block content %}
 
     {# TODO: achar um jeito de renderizar o sobre ao invés de artigo #}
-    {% include '_partials/article.html.twig' with { 'content': content } %}    
+    {# {% include '_partials/article.html.twig' with { 'content': content } %} #}
+    {% include '_partials/about.html.twig' with { 'content': content } %}
         
     {% include '_partials/related.html.twig' with { 'content': content } %}    
 {% endblock %}
