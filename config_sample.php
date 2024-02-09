@@ -10,7 +10,7 @@ return [
 
     // Site Information
     'site_name' => envconfig('SITE_NAME', 'Diana Arnos'),
-    'site_author' => envconfig('SITE_AUTHOR', 'Diana Arnos'),
+    'site_author' => envconfig('SITE_AUTHOR', 'Diana Ungaro Arnos'),
     'site_description' => envconfig('SITE_DESC', 'Um espaço para centralizar as coisas que eu produzir e compartilhar.'),
     'site_url' => envconfig('SITE_URL', 'http://localhost:8001'),
     'site_root' => envconfig('SITE_ROOT', '/'),
@@ -27,13 +27,14 @@ return [
 
     'foto_perfil' => 'https://avatars.githubusercontent.com/u/6060754?v=4',
 
-    // Optional: Social links that show up on the top right
     'social_links' => [
         'Twitter' => envconfig('LINK_TWITTER', 'https://twitter.com/dianaarnos'),
         'Github' => envconfig('LINK_GITHUB', 'https://github.com/dianaarnos'),
-        'YouTube' => envconfig('LINK_YOUTUBE'),
+        'YouTube' => envconfig('LINK_YOUTUBE', ''),
         'LinkedIn' => envconfig('LINK_LINKEDIN', 'https://www.linkedin.com/in/dianaarnos/'),
-        'Twitch' => envconfig('LINK_TWITCH'),
+        'Twitch' => envconfig('LINK_TWITCH', ''),
+        'Instagram' => envconfig('LINK_INSTAGRAM', 'https://www.instagram.com/dianaarnos'),
+        'BlueSky' => envconfig('LINK_BLUESKY', 'https://bsky.app/profile/dianaarnos.bsky.social'),
     ],
 
     'sugestao_de_tema' => 'https://github.com/dianaarnos/materiais/new?labels=sugestao_de_tema&template=sugestao-de-tema.md',

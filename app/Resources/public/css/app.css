@@ -2051,6 +2051,10 @@ input:checked + .toggle-bg {
   height: 2.25rem;
 }
 
+.h-96 {
+  height: 24rem;
+}
+
 .w-1\/2 {
   width: 50%;
 }
@@ -2083,8 +2087,20 @@ input:checked + .toggle-bg {
   width: 1.25rem;
 }
 
+.w-6 {
+  width: 1.5rem;
+}
+
 .w-64 {
   width: 16rem;
+}
+
+.w-8 {
+  width: 2rem;
+}
+
+.w-96 {
+  width: 24rem;
 }
 
 .w-full {
@@ -2095,12 +2111,12 @@ input:checked + .toggle-bg {
   max-width: 42rem;
 }
 
-.max-w-none {
-  max-width: none;
+.max-w-lg {
+  max-width: 32rem;
 }
 
-.max-w-screen-md {
-  max-width: 768px;
+.max-w-none {
+  max-width: none;
 }
 
 .max-w-screen-xl {
@@ -2177,10 +2193,6 @@ input:checked + .toggle-bg {
   grid-template-columns: repeat(1, minmax(0, 1fr));
 }
 
-.grid-cols-2 {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
 .grid-cols-4 {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
@@ -2235,10 +2247,6 @@ input:checked + .toggle-bg {
 
 .gap-6 {
   gap: 1.5rem;
-}
-
-.gap-8 {
-  gap: 2rem;
 }
 
 .-space-x-px > :not([hidden]) ~ :not([hidden]) {
@@ -2661,6 +2669,10 @@ input:checked + .toggle-bg {
 
 .underline {
   text-decoration-line: underline;
+}
+
+.no-underline {
+  text-decoration-line: none;
 }
 
 .antialiased {
@@ -3292,10 +3304,6 @@ input:checked + .toggle-bg {
 @media (min-width: 640px) {
   .sm\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .sm\:grid-cols-3 {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .sm\:text-center {
