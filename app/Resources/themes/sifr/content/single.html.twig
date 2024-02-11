@@ -24,12 +24,12 @@
 {% block content %}
     {# Renderiza diferente para cada tipo de conteúdo #}
     {% if content.route == 'posts' %}
-        {% include '_partials/article.html.twig' with { 'content': content } %}
+        {% include '_partials/article.html.twig' %}
 
     {% elseif content.route == 'pages' and content.slug == 'sobre'%}    
-        {% include '_partials/about.html.twig' with { 'content': content } %}
+        {% include '_partials/about.html.twig' %}
 
     {% endif %}
         
-    {% include '_partials/related.html.twig' with { 'content': content } %}    
+    {% include '_partials/related.html.twig' %}    
 {% endblock %}

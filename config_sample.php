@@ -16,8 +16,40 @@ return [
     'site_root' => envconfig('SITE_ROOT', '/'),
     'site_about' => envconfig('SITE_ABOUT', 'pages/sobre'),
     // Set site_index if you want a custom index page
-    'site_index' => 'pages/index',
-    'site_index_tpl' => 'content/index.html.twig',
+    // 'site_index' => 'pages/index',
+    // 'site_index_tpl' => 'content/index.html.twig',
+
+    // Layout atual comporta 4 destaques
+    'destaques' => [
+        [
+            'img' => 'https://flowbite.s3.amazonaws.com/blocks/marketing-ui/article/blog-1.png',
+            'titulo' => 'Título',
+            'desc' => 'desc',
+            'rota' => 'posts',
+            'slug' => '20200601_aplicacoes-graficas-wsl2',
+        ],
+        [
+            'img' => 'https://flowbite.s3.amazonaws.com/blocks/marketing-ui/article/blog-1.png',
+            'titulo' => 'Título',
+            'desc' => 'desc',
+            'rota' => 'posts',
+            'slug' => '20200601_aplicacoes-graficas-wsl2',
+        ],
+        [
+            'img' => 'https://flowbite.s3.amazonaws.com/blocks/marketing-ui/article/blog-1.png',
+            'titulo' => 'Título',
+            'desc' => 'desc',
+            'rota' => 'posts',
+            'slug' => '20200601_aplicacoes-graficas-wsl2',
+        ],
+        [
+            'img' => 'https://flowbite.s3.amazonaws.com/blocks/marketing-ui/article/blog-1.png',
+            'titulo' => 'Título',
+            'desc' => 'desc',
+            'rota' => 'posts',
+            'slug' => '20200601_aplicacoes-graficas-wsl2',
+        ],
+    ],
 
     'posts_per_page' => 12,
 
