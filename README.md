@@ -1,9 +1,9 @@
 # Esse projeto é feito usando
 
-- [Librarian](https://github.com/librarianphp/librarian) 
+- [Docker](https://www.docker.com/)
 - [PHP](https://www.php.net/)
 - [Composer](https://getcomposer.org/)
-- [Docker](https://www.docker.com/)
+- [Librarian](https://github.com/librarianphp/librarian) 
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Flowbite](https://flowbite.com/)
 
@@ -12,6 +12,7 @@
 1. Renomeie o arquivo `.env.dist` para `.env`
 2. Atualize os valores de `.env` conforme a necessidade
 3. Rode o comando `docker compose build`
+<!-- TODO: npm install: manualmente ou na docker image? -->
 
 ## Para acessar o projeto
 

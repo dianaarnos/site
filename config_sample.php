@@ -12,7 +12,7 @@ return [
     'site_name' => envconfig('SITE_NAME', 'Diana Arnos'),
     'site_author' => envconfig('SITE_AUTHOR', 'Diana Ungaro Arnos'),
     'site_description' => envconfig('SITE_DESC', 'Um espaço para centralizar as coisas que eu produzir e compartilhar.'),
-    'site_url' => envconfig('SITE_URL', 'http://localhost:8001'),
+    'site_url' => envconfig('SITE_URL', 'http://localhost:8000'),
     'site_root' => envconfig('SITE_ROOT', '/'),
     'site_about' => envconfig('SITE_ABOUT', 'pages/sobre'),
     // Set site_index if you want a custom index page

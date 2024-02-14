@@ -12,7 +12,7 @@ return [
     'site_name' => envconfig('SITE_NAME', 'Diana Arnos'),
     'site_author' => envconfig('SITE_AUTHOR', 'Diana Ungaro Arnos'),
     'site_description' => envconfig('SITE_DESC', 'Um espaço para centralizar as coisas que eu produzir e compartilhar.'),
-    'site_url' => envconfig('SITE_URL', 'http://localhost:8001'),
+    'site_url' => envconfig('SITE_URL', 'http://localhost:8000'),
     'site_root' => envconfig('SITE_ROOT', '/'),
     'site_about' => envconfig('SITE_ABOUT', 'pages/sobre'),
     // Set site_index if you want a custom index page
@@ -77,4 +77,5 @@ return [
         'Instagram' => envconfig('LINK_INSTAGRAM', 'https://www.instagram.com/dianaarnos'),
         'BlueSky' => envconfig('LINK_BLUESKY', 'https://bsky.app/profile/dianaarnos.bsky.social'),
     ],
+    'twig_debug' => true,
 ];
