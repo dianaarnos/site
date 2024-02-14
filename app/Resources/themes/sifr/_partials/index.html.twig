@@ -28,37 +28,28 @@
     {% set tags = tags|merge([temp]) %}
 {% endfor %}
 
+{% set pointer = 0 %}
 {% for tag in tags %}
     {% set count = 0 %}
     {% set artigos = [] %}
-    {# workaround: não existe comando break no twig #}
-    {% set stop_loop = false %}
-    {% for artigo in content_list %}
-        {{dump(artigo)}}
-        {% if artigo.frontMatterHas('tags') %}
-            {% if tag['nome'] in artigo.getAsArray('tags') %}
-                TEM TAG <br>
-                {% set count = count + 1 %}
-                {# TODO: pegar de artigo em content_list #}
-                {% set temp = {
-                        imagem: "https://flowbite.s3.amazonaws.com/blocks/marketing-ui/article/blog-1.png",
-                        url: "#",
-                        titulo: "Titulo teste",
-                        desc: "desc teste bla bla bla",
-                    } 
-                %}
-                {% set artigos = artigos|merge([temp]) %}
-            {% endif %}
+
+    {% for count in 0..(config('artigos_por_tag_home') - 1) %}
+        {% set artigo = content_list.slice(pointer - 1, 1).current() %}
+
+        {% if artigo.frontMatterHas('tags') and 'programação' in artigo.getAsArray('tags') %}
+            {% set artigos = artigos|merge([artigo]) %}
+            {% set count = count + 1 %}
         {% endif %}
 
-        {% if count == config('artigos_por_tag_home') %}
-            {% set stop_loop = true %}
-        {% endif %}
-        {% set tags = tags|merge([artigos]) %}
+        {% set pointer = pointer + 1 %}
     {% endfor %}
+
+    {% set tag = tag|merge({'artigos': artigos}) %}
+    {% set tags = tags|merge([tag]) %}
 {% endfor %}
 
-{% for tag in tags %}
+{{dump(tags)}}
+{# {% for tag in tags %}
     <hr class="mt-10 mx-auto max-w-screen-xl">
   
     <div class="px-4 mx-auto max-w-screen-xl pt-10">
@@ -84,4 +75,4 @@
             {% endfor %}
         </div>
     </div>
-{% endfor %}
+{% endfor %} #}
