@@ -51,15 +51,6 @@ return [
         ],
     ],
 
-    // Tags raíz - "Grandes Categorias"
-    'tags_raiz' => [
-        'tech',
-        'outros',
-    ],
-
-    // Quantidade de artigos por tag-raíz (categoria) para exibir na home
-    'artigos_por_tag_home' => 4,
-
     'posts_per_page' => 12,
 
     'sugestao_de_tema' => 'https://github.com/dianaarnos/materiais/issues/new?labels=sugestao_de_tema&template=sugestao-de-tema.md',
