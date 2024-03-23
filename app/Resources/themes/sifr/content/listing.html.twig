@@ -3,11 +3,11 @@
 {% block content %}
     <main aria-label="Artigos Recentes" class="py-8 lg:py-18 bg-gray-50 dark:bg-gray-800">
         {% if _context.base_url != null %}
-            {% include '_partials/articles.html.twig' %}
-            
-            {% include '_partials/pagination.html.twig' with {'total_articles':  content_list|length, 'items_per_page': 12 } %}
+            {% include '_partials/articles.html.twig' %}            
         {% else %}
             {% include '_partials/index.html.twig' %}
         {% endif %}
+
+        {% include '_partials/pagination.html.twig' with {'total_articles':  content_list|length, 'items_per_page': 12 } %}
     </main>
 {% endblock %}

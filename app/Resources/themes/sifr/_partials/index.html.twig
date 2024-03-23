@@ -1,78 +1,59 @@
 <div class="px-4 mx-auto max-w-screen-xl">
     <h2 class="mb-8 text-2xl font-bold text-gray-900 dark:text-white">Destaques</h2>
 
+    {# Carrega os posts de Destaque que foram definidos na config #}
     <div class="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
-        {% for item in config('destaques') %}
+        {% for destaque in config('destaques') %}
             <article class="max-w-xs">
-                <a href="/{{ item['rota'] }}/{{ item['slug'] }}">
-                    <img src="{{ item['img'] }}" class="mb-5 rounded-lg" alt="Image 1">
+                <a href="/{{ destaque['rota'] }}/{{ destaque['slug'] }}">
+                    <img src="{{ destaque['img'] }}" class="mb-5 rounded-lg" alt="Image 1">
                 </a>
 
                 <h2 class="mb-2 text-xl font-bold leading-tight text-gray-900 dark:text-white">
-                    <a href="/{{ item['rota'] }}/{{ item['slug'] }}">{{ item['titulo'] }}</a>
+                    <a href="/{{ destaque['rota'] }}/{{ destaque['slug'] }}">{{ destaque['titulo'] }}</a>
                 </h2>
 
-                <p class="mb-4 text-gray-500 dark:text-gray-400">{{ item['desc'] }}</p>
+                <p class="mb-4 text-gray-500 dark:text-gray-400">{{ destaque['desc'] }}</p>
                 
-                <a href="article.html" class="inline-flex items-center font-medium text-primary-600 dark:text-primary-500">
+                <a href="/{{ destaque['rota'] }}/{{ destaque['slug'] }}" class="inline-flex items-center font-medium text-primary-600 dark:text-primary-500">
                     Leia mais...
                 </a>
             </article>
         {% endfor %}
     </div>
 </div>
+                
 
-{% set tags = [] %}
-{% for tag in config('tags_raiz') %}
-    {% set temp = {nome: tag }%}
-    {% set tags = tags|merge([temp]) %}
-{% endfor %}
-
-{% set pointer = 0 %}
-{% for tag in tags %}
-    {% set count = 0 %}
-    {% set artigos = [] %}
-
-    {% for count in 0..(config('artigos_por_tag_home') - 1) %}
-        {% set artigo = content_list.slice(pointer - 1, 1).current() %}
-
-        {% if artigo.frontMatterHas('tags') and 'programação' in artigo.getAsArray('tags') %}
-            {% set artigos = artigos|merge([artigo]) %}
-            {% set count = count + 1 %}
-        {% endif %}
-
-        {% set pointer = pointer + 1 %}
-    {% endfor %}
-
-    {% set tag = tag|merge({'artigos': artigos}) %}
-    {% set tags = tags|merge([tag]) %}
-{% endfor %}
-
-{{dump(tags)}}
-{# {% for tag in tags %}
-    <hr class="mt-10 mx-auto max-w-screen-xl">
+<hr class="mt-10 mx-auto max-w-screen-xl">
   
     <div class="px-4 mx-auto max-w-screen-xl pt-10">
-        <h2 class="mb-8 text-2xl font-bold text-gray-900 dark:text-white">Artigos Recentes - #{{ tag['nome'] }}</h2>
+        <h2 class="mb-8 text-2xl font-bold text-gray-900 dark:text-white">Artigos Recentes {{ tag.nome }}</h2>
 
         <div class="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
-            {% for artigo in tag['artigos'] %}
-                <article class="max-w-xs">
-                    <a href="{{ tag['url'] }}">
-                        <img src="{{ tag['nome'] }}" class="mb-5 rounded-lg" alt="Image 1">
-                    </a>
+            {% for post in content_list %}
+                {% if post.route != 'pages' %}
+                    <article class="max-w-xs">
+                        {% if post.frontMatterGet('cover_image')%}
+                            <a href="/{{ post.getLink() }}">
+                                <img src="{{ post.frontMatterGet('cover_image')|raw}}" class="mb-5 rounded-lg" alt="Image 1">
+                            </a>
+                        {% else %}
+                            <a href="/{{ post.getLink() }}">
+                                <img src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/article/blog-1.png" class="mb-5 rounded-lg" alt="Image 1">
+                            </a>
+                        {% endif %}
 
-                    <h2 class="mb-2 text-xl font-bold leading-tight text-gray-900 dark:text-white">
-                        <a href="{{ tag['url'] }}">{{ tag['titulo'] }}</a>
-                    </h2>
+                        <h2 class="mb-2 text-xl font-bold leading-tight text-gray-900 dark:text-white">
+                            <a href="/{{ post.getLink() }}">{{ post.frontMatterGet('title') ?? post.title }}</a>
+                        </h2>
 
-                    <p class="mb-4 text-gray-500 dark:text-gray-400">{{ tag['desc'] }}</p>
-                    
-                    <a href="{{ tag['url'] }}" class="inline-flex items-center font-medium text-primary-600 dark:text-primary-500">
-                        Leia mais...
-                    </a>
-                </article>
-            {% endfor %}
+                        <p class="mb-4 text-gray-500 dark:text-gray-400">{{ post.frontMatterGet('description')|slice(0, 180) }}...</p>
+                        
+                        <a href="/{{ post.getLink() }}" class="inline-flex items-center font-medium text-primary-600 dark:text-primary-500">
+                            Leia mais...
+                        </a>
+                    </article>
+                {% endif %}
+        {% endfor %}
         </div>
     </div>
-{% endfor %} #}

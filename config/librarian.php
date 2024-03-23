@@ -23,8 +23,8 @@ return [
     'destaques' => [
         [
             'img' => 'https://flowbite.s3.amazonaws.com/blocks/marketing-ui/article/blog-1.png',
-            'titulo' => 'Título',
-            'desc' => 'desc',
+            'titulo' => 'Título de teste',
+            'desc' => 'descrição que eu quero colocar',
             'rota' => 'posts',
             'slug' => '20200601_aplicacoes-graficas-wsl2',
         ],
@@ -51,13 +51,13 @@ return [
         ],
     ],
 
-    // Tags raíz
+    // Tags raíz - "Grandes Categorias"
     'tags_raiz' => [
         'tech',
         'outros',
     ],
 
-    // Quantidade de artigos por tag-raíz para exibir na home
+    // Quantidade de artigos por tag-raíz (categoria) para exibir na home
     'artigos_por_tag_home' => 4,
 
     'posts_per_page' => 12,
